@@ -13,6 +13,11 @@
 		14B310B123442A09005E2914 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B310AF23442A09005E2914 /* Main.storyboard */; };
 		14B310B323442A0A005E2914 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14B310B223442A0A005E2914 /* Assets.xcassets */; };
 		14B310B623442A0A005E2914 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B310B423442A0A005E2914 /* LaunchScreen.storyboard */; };
+		14B310BE23442DCA005E2914 /* SnowFlakeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B310BD23442DCA005E2914 /* SnowFlakeManager.swift */; };
+		14B310C223454A3B005E2914 /* bells.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B310C023454A3B005E2914 /* bells.png */; };
+		14B310C323454A3B005E2914 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14B310C123454A3B005E2914 /* background.jpg */; };
+		14B310C623454AF2005E2914 /* song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14B310C523454AF2005E2914 /* song.mp3 */; };
+		14B310C823454AFA005E2914 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14B310C723454AFA005E2914 /* bell.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		14B310B223442A0A005E2914 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14B310B523442A0A005E2914 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14B310B723442A0A005E2914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14B310BD23442DCA005E2914 /* SnowFlakeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowFlakeManager.swift; sourceTree = "<group>"; };
+		14B310C023454A3B005E2914 /* bells.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bells.png; sourceTree = "<group>"; };
+		14B310C123454A3B005E2914 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		14B310C523454AF2005E2914 /* song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song.mp3; sourceTree = "<group>"; };
+		14B310C723454AFA005E2914 /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 		14B310A823442A09005E2914 /* Christmas Countdown */ = {
 			isa = PBXGroup;
 			children = (
+				14B310BF23454A2D005E2914 /* Media */,
 				14B310A923442A09005E2914 /* AppDelegate.swift */,
 				14B310AB23442A09005E2914 /* SceneDelegate.swift */,
 				14B310AD23442A09005E2914 /* ViewController.swift */,
@@ -63,8 +74,20 @@
 				14B310B223442A0A005E2914 /* Assets.xcassets */,
 				14B310B423442A0A005E2914 /* LaunchScreen.storyboard */,
 				14B310B723442A0A005E2914 /* Info.plist */,
+				14B310BD23442DCA005E2914 /* SnowFlakeManager.swift */,
 			);
 			path = "Christmas Countdown";
+			sourceTree = "<group>";
+		};
+		14B310BF23454A2D005E2914 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				14B310C723454AFA005E2914 /* bell.mp3 */,
+				14B310C523454AF2005E2914 /* song.mp3 */,
+				14B310C123454A3B005E2914 /* background.jpg */,
+				14B310C023454A3B005E2914 /* bells.png */,
+			);
+			path = Media;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +149,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				14B310B623442A0A005E2914 /* LaunchScreen.storyboard in Resources */,
+				14B310C323454A3B005E2914 /* background.jpg in Resources */,
 				14B310B323442A0A005E2914 /* Assets.xcassets in Resources */,
+				14B310C823454AFA005E2914 /* bell.mp3 in Resources */,
+				14B310C223454A3B005E2914 /* bells.png in Resources */,
 				14B310B123442A09005E2914 /* Main.storyboard in Resources */,
+				14B310C623454AF2005E2914 /* song.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +167,7 @@
 			files = (
 				14B310AE23442A09005E2914 /* ViewController.swift in Sources */,
 				14B310AA23442A09005E2914 /* AppDelegate.swift in Sources */,
+				14B310BE23442DCA005E2914 /* SnowFlakeManager.swift in Sources */,
 				14B310AC23442A09005E2914 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,7 +244,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -284,15 +312,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = Z4JJZ2GKLM;
 				INFOPLIST_FILE = "Christmas Countdown/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "bossondesign.Christmas-Countdown";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Christmas Countdown";
+				PROVISIONING_PROFILE_SPECIFIER = "Christmas Countdown";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,15 +334,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = Z4JJZ2GKLM;
 				INFOPLIST_FILE = "Christmas Countdown/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "bossondesign.Christmas-Countdown";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Christmas Countdown";
+				PROVISIONING_PROFILE_SPECIFIER = "Christmas Countdown";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

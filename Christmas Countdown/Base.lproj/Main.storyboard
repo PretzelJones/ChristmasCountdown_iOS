@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,56 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Christmas_Countdown" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="cqh-5C-vs9">
+                                <rect key="frame" x="20" y="44" width="374" height="255"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="150"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days till Christmas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKJ-74-cMb">
+                                <rect key="frame" x="0.0" y="307" width="414" height="101"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="101" id="zyP-uK-0fQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bells.png" translatesAutoresizingMaskIntoConstraints="NO" id="6MT-jI-rmg">
+                                <rect key="frame" x="20" y="416" width="374" height="446"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cqh-5C-vs9" firstAttribute="leading" secondItem="6MT-jI-rmg" secondAttribute="leading" id="0bR-c3-imr"/>
+                            <constraint firstItem="cqh-5C-vs9" firstAttribute="centerX" secondItem="GKJ-74-cMb" secondAttribute="centerX" id="19N-hW-roW"/>
+                            <constraint firstItem="6MT-jI-rmg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Fdt-Lg-fRm"/>
+                            <constraint firstItem="GKJ-74-cMb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="263" id="K0p-0M-aGC"/>
+                            <constraint firstItem="6MT-jI-rmg" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="R7c-CR-dx8"/>
+                            <constraint firstItem="6MT-jI-rmg" firstAttribute="top" secondItem="GKJ-74-cMb" secondAttribute="bottom" constant="8" id="U6p-Nq-SlU"/>
+                            <constraint firstItem="GKJ-74-cMb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cLR-vU-L7q"/>
+                            <constraint firstItem="6MT-jI-rmg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fqr-jO-zFs"/>
+                            <constraint firstItem="GKJ-74-cMb" firstAttribute="centerX" secondItem="6MT-jI-rmg" secondAttribute="centerX" id="gKm-TM-Iqn"/>
+                            <constraint firstItem="cqh-5C-vs9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="h3O-lk-RTE"/>
+                            <constraint firstItem="GKJ-74-cMb" firstAttribute="top" secondItem="cqh-5C-vs9" secondAttribute="bottom" constant="8" id="vKq-xb-HHP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="daysLabel" destination="cqh-5C-vs9" id="pKe-17-jZG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bells.png" width="512" height="512"/>
+    </resources>
 </document>
