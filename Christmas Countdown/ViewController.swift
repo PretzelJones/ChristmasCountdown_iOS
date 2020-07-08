@@ -21,14 +21,16 @@ import AVFoundation
 class ViewController: UIViewController {
     
     @IBOutlet weak var daysLabel: UILabel!
+    @IBOutlet weak var bellsImage: UIImageView!
     
     var audioPlayer: AVAudioPlayer?
+    var bellPlayer: AVAudioPlayer?
     
     var ChristmasDay: Date
     {
         let userCalendar = Calendar.current
         var components = DateComponents()
-        components.year = 2019
+        components.year = 2020
         components.day = 25
         components.month = 12
         
@@ -47,13 +49,27 @@ class ViewController: UIViewController {
         return userCalendar.date(from: components)!
     }
     
-    override func viewDidLoad()
-    {
+    
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
+        
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTapped(gesture:)))
+
+            bellsImage.addGestureRecognizer(tapGesture)
+            bellsImage.isUserInteractionEnabled = true
         
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "song", ofType: "mp3")!))
             audioPlayer?.prepareToPlay()
+        }
+        catch {
+            print(error)
+        }
+        
+        do {
+            bellPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "bell", ofType: "mp3")!))
+            bellPlayer?.prepareToPlay()
         }
         catch {
             print(error)
@@ -96,8 +112,15 @@ class ViewController: UIViewController {
         UIApplication.shared.applicationIconBadgeNumber = daysTillChristmas
     }
     
-    func daysBetweenDates(startDate: Date, endDate: Date) -> Int
-    {
+    @objc func imageTapped(gesture: UIGestureRecognizer) {
+    
+        if (gesture.view as? UIImageView) != nil {
+        
+        bellPlayer!.play();
+        }
+    }
+    
+    func daysBetweenDates(startDate: Date, endDate: Date) -> Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.day], from: startDate, to: endDate)
         return components.day!
