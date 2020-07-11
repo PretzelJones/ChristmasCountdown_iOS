@@ -103,11 +103,11 @@ class ViewController: UIViewController {
         
         UIApplication.shared.applicationIconBadgeNumber = daysTillChristmas
     }
-    
-    @objc func imageTapped(gesture: UIGestureRecognizer) {
-        
+
+        @objc func imageTapped(gesture: UIGestureRecognizer) {
+
         if (gesture.view as? UIImageView) != nil {
-            
+
             bellPlayer!.play();
         }
     }
