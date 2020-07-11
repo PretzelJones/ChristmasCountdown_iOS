@@ -6,14 +6,6 @@
 //  Copyright © 2019 Sean Patterson. All rights reserved.
 //
 
-//
-//  ViewController.swift
-//  ChristmasCountdown
-//
-//  Created by Sean Patterson on 10/1/19.
-//  Copyright © 2019 Sean Patterson. All rights reserved.
-//
-
 import UIKit
 import UserNotifications
 import AVFoundation
@@ -28,9 +20,11 @@ class ViewController: UIViewController {
     
     var ChristmasDay: Date
     {
+        let currentYear = Date()
         let userCalendar = Calendar.current
         var components = DateComponents()
-        components.year = 2020
+//        components.year = 2020
+        components.year = userCalendar.component(.year, from: currentYear)
         components.day = 25
         components.month = 12
         
@@ -49,15 +43,13 @@ class ViewController: UIViewController {
         return userCalendar.date(from: components)!
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTapped(gesture:)))
-
-            bellsImage.addGestureRecognizer(tapGesture)
-            bellsImage.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTapped(gesture:)))
+        
+        bellsImage.addGestureRecognizer(tapGesture)
+        bellsImage.isUserInteractionEnabled = true
         
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "song", ofType: "mp3")!))
@@ -113,10 +105,10 @@ class ViewController: UIViewController {
     }
     
     @objc func imageTapped(gesture: UIGestureRecognizer) {
-    
-        if (gesture.view as? UIImageView) != nil {
         
-        bellPlayer!.play();
+        if (gesture.view as? UIImageView) != nil {
+            
+            bellPlayer!.play();
         }
     }
     

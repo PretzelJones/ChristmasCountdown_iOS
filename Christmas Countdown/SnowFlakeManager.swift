@@ -12,6 +12,7 @@ import UIKit
 internal struct SnowFlakeManager {
 
     fileprivate let snowLayer = CAEmitterLayer()
+    
     fileprivate lazy var snowCell: CAEmitterCell = {
         let snowCell = CAEmitterCell()
         snowCell.contents = UIImage(named: "snowFlake")?.cgImage
