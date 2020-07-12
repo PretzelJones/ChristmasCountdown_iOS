@@ -18,12 +18,11 @@ class ViewController: UIViewController {
     var audioPlayer: AVAudioPlayer?
     var bellPlayer: AVAudioPlayer?
     
-    var ChristmasDay: Date
-    {
+    var ChristmasDay: Date {
         let currentYear = Date()
         let userCalendar = Calendar.current
         var components = DateComponents()
-//        components.year = 2020
+        //        components.year = 2020
         components.year = userCalendar.component(.year, from: currentYear)
         components.day = 25
         components.month = 12
@@ -31,8 +30,7 @@ class ViewController: UIViewController {
         return userCalendar.date(from: components)!
     }
     
-    var today: Date
-    {
+    var today: Date {
         let now = Date()
         let userCalendar = Calendar.current
         var components = DateComponents()
@@ -45,6 +43,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        snowFlakeEffect()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTapped(gesture:)))
         
@@ -69,6 +69,28 @@ class ViewController: UIViewController {
         
         audioPlayer?.numberOfLoops = -1
         self.audioPlayer?.play()
+        
+        let daysTillChristmas = daysBetweenDates(startDate: today, endDate: ChristmasDay)
+        daysLabel.text = "\(daysTillChristmas)"
+        
+        UIApplication.shared.applicationIconBadgeNumber = daysTillChristmas
+    }
+    
+    @objc func imageTapped(gesture: UIGestureRecognizer) {
+        
+        if (gesture.view as? UIImageView) != nil {
+            
+            bellPlayer!.play();
+        }
+    }
+    
+    func daysBetweenDates(startDate: Date, endDate: Date) -> Int {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day], from: startDate, to: endDate)
+        return components.day!
+    }
+    
+    func snowFlakeEffect() {
         
         //set snowflake background image
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)
@@ -97,25 +119,7 @@ class ViewController: UIViewController {
         snowEmitterLayer.emitterCells = [flakeEmitterCell]
         
         view.layer.addSublayer(snowEmitterLayer)
-        
-        let daysTillChristmas = daysBetweenDates(startDate: today, endDate: ChristmasDay)
-        daysLabel.text = "\(daysTillChristmas)"
-        
-        UIApplication.shared.applicationIconBadgeNumber = daysTillChristmas
-    }
-
-        @objc func imageTapped(gesture: UIGestureRecognizer) {
-
-        if (gesture.view as? UIImageView) != nil {
-
-            bellPlayer!.play();
-        }
     }
     
-    func daysBetweenDates(startDate: Date, endDate: Date) -> Int {
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.day], from: startDate, to: endDate)
-        return components.day!
-    }
 }
 

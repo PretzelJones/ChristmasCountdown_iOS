@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04D7A5E324B665D10051FB37 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D7A5E224B665D10051FB37 /* Animation.swift */; };
 		14B310AA23442A09005E2914 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B310A923442A09005E2914 /* AppDelegate.swift */; };
 		14B310AC23442A09005E2914 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B310AB23442A09005E2914 /* SceneDelegate.swift */; };
 		14B310AE23442A09005E2914 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B310AD23442A09005E2914 /* ViewController.swift */; };
@@ -22,7 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04D7A5E224B665D10051FB37 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		14B310A623442A09005E2914 /* Christmas Countdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Christmas Countdown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14B310A923442A09005E2914 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14B310AB23442A09005E2914 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 				14B310AB23442A09005E2914 /* SceneDelegate.swift */,
 				14B310AD23442A09005E2914 /* ViewController.swift */,
 				14B310BD23442DCA005E2914 /* SnowFlakeManager.swift */,
-				04D7A5E224B665D10051FB37 /* Animation.swift */,
 				14B310AF23442A09005E2914 /* Main.storyboard */,
 				14B310B423442A0A005E2914 /* LaunchScreen.storyboard */,
 				14B310B723442A0A005E2914 /* Info.plist */,
@@ -171,7 +168,6 @@
 				14B310AE23442A09005E2914 /* ViewController.swift in Sources */,
 				14B310AA23442A09005E2914 /* AppDelegate.swift in Sources */,
 				14B310BE23442DCA005E2914 /* SnowFlakeManager.swift in Sources */,
-				04D7A5E324B665D10051FB37 /* Animation.swift in Sources */,
 				14B310AC23442A09005E2914 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
