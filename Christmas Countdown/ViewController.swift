@@ -18,28 +18,47 @@ class ViewController: UIViewController {
     var audioPlayer: AVAudioPlayer?
     var bellPlayer: AVAudioPlayer?
     
-    var ChristmasDay: Date {
-        let currentYear = Date()
-        let userCalendar = Calendar.current
-        var components = DateComponents()
-        //        components.year = 2020
-        components.year = userCalendar.component(.year, from: currentYear)
-        components.day = 25
-        components.month = 12
-        
-        return userCalendar.date(from: components)!
+    func daysUntilNextDate(matching components: DateComponents) -> Int {
+        let date = Date()
+        guard let calendar = components.calendar,
+              let nextDate = calendar.nextDate(after: date, matching: components, matchingPolicy: .strict) else { return .zero }
+        return calendar.dateComponents([.day], from: date, to: nextDate).day!
     }
     
-    var today: Date {
-        let now = Date()
-        let userCalendar = Calendar.current
-        var components = DateComponents()
-        components.year = userCalendar.component(.year, from: now)
-        components.day = userCalendar.component(.day, from: now)
-        components.month = userCalendar.component(.month, from: now)
-        
-        return userCalendar.date(from: components)!
-    }
+    //    let holiday: DateComponents = .init(calendar: .current, month: 11, day: 2)
+    let christmas: DateComponents = .init(calendar: .current, month: 11, day: 6)
+    
+    //    daysUntilNextDate(matching: holiday)   // 363
+    
+    //
+    //    var ChristmasDay: Date {
+    //        let currentYear = Date()
+    //        let userCalendar = Calendar.current
+    //        var components = DateComponents()
+    ////        components.year = 2021
+    //        components.year = userCalendar.component(.year, from: currentYear)
+    //        components.day = 02
+    //        components.month = 11
+    //
+    //        return userCalendar.date(from: components)!
+    //    }
+    //
+    //    var today: Date {
+    //        let now = Date()
+    //        let userCalendar = Calendar.current
+    //        var components = DateComponents()
+    //        components.year = userCalendar.component(.year, from: now)
+    //        components.day = userCalendar.component(.day, from: now)
+    //        components.month = userCalendar.component(.month, from: now)
+    //
+    //        return userCalendar.date(from: components)!
+    //    }
+    //
+    //    func daysBetweenDates(startDate: Date, endDate: Date) -> Int {
+    //        let calendar = Calendar.current
+    //        let components = calendar.dateComponents([.day], from: startDate, to: endDate)
+    //        return components.day!
+    //    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,10 +89,18 @@ class ViewController: UIViewController {
         audioPlayer?.numberOfLoops = -1
         self.audioPlayer?.play()
         
-        let daysTillChristmas = daysBetweenDates(startDate: today, endDate: ChristmasDay)
-        daysLabel.text = "\(daysTillChristmas)"
+        //        let daysTillChristmas = daysBetweenDates(startDate: today, endDate: ChristmasDay)
+        //        daysLabel.text = "\(daysTillChristmas)"
         
-        UIApplication.shared.applicationIconBadgeNumber = daysTillChristmas
+        if (daysUntilNextDate(matching: christmas) == 0){
+            daysLabel.text = "Merry Christmas"
+        }else{
+            daysLabel.text = "\(daysUntilNextDate(matching: christmas))"
+        }
+        
+        
+        UIApplication.shared.applicationIconBadgeNumber = (daysUntilNextDate(matching: christmas))
+        
     }
     
     @objc func imageTapped(gesture: UIGestureRecognizer) {
@@ -82,12 +109,6 @@ class ViewController: UIViewController {
             
             bellPlayer!.play();
         }
-    }
-    
-    func daysBetweenDates(startDate: Date, endDate: Date) -> Int {
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.day], from: startDate, to: endDate)
-        return components.day!
     }
     
     func snowFlakeEffect() {

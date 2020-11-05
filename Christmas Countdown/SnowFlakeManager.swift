@@ -10,7 +10,7 @@ import UIKit
 
 /// Manages the life cycle of the slow flake animation
 internal struct SnowFlakeManager {
-
+    
     fileprivate let snowLayer = CAEmitterLayer()
     
     fileprivate lazy var snowCell: CAEmitterCell = {
@@ -29,7 +29,7 @@ internal struct SnowFlakeManager {
         snowCell.spinRange = 1.0
         return snowCell
     }()
-
+    
     /// Injects snow layer into view hierarchy
     ///
     /// - Parameter view: UIView to insert snow layer within
@@ -40,13 +40,13 @@ internal struct SnowFlakeManager {
         snowLayer.beginTime = CACurrentMediaTime()
         snowLayer.timeOffset = CFTimeInterval(arc4random_uniform(6) + 5)
         snowLayer.emitterCells = [snowCell]
-
+        
         view.layer.addSublayer(snowLayer)
     }
-
+    
     /// Removes snow flake animation
     func removeFlake() {
         snowLayer.removeFromSuperlayer()
     }
-
+    
 }
